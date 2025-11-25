@@ -27,70 +27,57 @@ import Github from '@/components/svgs/Github';
 import LinkedIn from '@/components/svgs/LinkedIn';
 import Mail from '@/components/svgs/Mail';
 import X from '@/components/svgs/X';
-import Bun from '@/components/technologies/Bun';
-import JavaScript from '@/components/technologies/JavaScript';
-import MongoDB from '@/components/technologies/MongoDB';
-import NextJs from '@/components/technologies/NextJs';
-import NodeJs from '@/components/technologies/NodeJs';
-import PostgreSQL from '@/components/technologies/PostgreSQL';
-import Prisma from '@/components/technologies/Prisma';
-import ReactIcon from '@/components/technologies/ReactIcon';
 // Technology Components
-import TypeScript from '@/components/technologies/TypeScript';
+import Python from '@/components/technologies/Python';
+import Rust from '@/components/technologies/Rust';
+import C from '@/components/technologies/C';
+import Cpp from '@/components/technologies/Cpp';
+import JavaScript from '@/components/technologies/JavaScript';
 
 // Component mapping for skills
 export const skillComponents = {
-  TypeScript: TypeScript,
-  ReactIcon: ReactIcon,
-  NextJs: NextJs,
-  Bun: Bun,
-  PostgreSQL: PostgreSQL,
-  NodeJs: NodeJs,
-  MongoDB: MongoDB,
-  Prisma: Prisma,
+  Python: Python,
+  Rust: Rust,
+  C: C,
+  Cpp: Cpp,
   JavaScript: JavaScript,
 };
 
 export const heroConfig = {
   // Personal Information
-  name: 'Ram',
-  title: 'A Full Stack web developer.',
+  name: 'Amanat Ali',
+  title: 'Python & Systems Developer.',
   avatar: '/assets/logo.png',
 
   // Skills Configuration
   skills: [
     {
-      name: 'Typescript',
-      href: 'https://www.typescriptlang.org/',
-      component: 'TypeScript',
+      name: 'Python',
+      href: 'https://www.python.org/',
+      component: 'Python',
     },
     {
-      name: 'React',
-      href: 'https://react.dev/',
-      component: 'ReactIcon',
+      name: 'Rust',
+      href: 'https://www.rust-lang.org/',
+      component: 'Rust',
     },
     {
-      name: 'Next.js',
-      href: 'https://nextjs.org/',
-      component: 'NextJs',
+      name: 'C',
+      href: 'https://en.wikipedia.org/wiki/C_(programming_language)',
+      component: 'C',
     },
     {
-      name: 'Bun',
-      href: 'https://bun.sh/',
-      component: 'Bun',
-    },
-    {
-      name: 'PostgreSQL',
-      href: 'https://www.postgresql.org/',
-      component: 'PostgreSQL',
+      name: 'C++',
+      href: 'https://isocpp.org/',
+      component: 'Cpp',
     },
   ],
 
   // Description Configuration
   description: {
     template:
-      'I build interactive web apps using {skills:0}, {skills:1}, {skills:2}, {skills:3} and {skills:4}. With a focus on <b>UI</b> design. Enthusiastic about <b>Three.js</b>, driven by a keen eye for design.',
-  },
+      'I engineer intelligent systems using {skills:0}, {skills:1}, {skills:2}, and {skills:3}My work blends automation, machine learning, and high-performance system design—building tools that think fast, react precisely, and scale with real-world complexity.',
+    },
 
   // Buttons Configuration
   buttons: [
@@ -112,23 +99,18 @@ export const heroConfig = {
 // Social Links Configuration
 export const socialLinks = [
   {
-    name: 'X',
-    href: 'https://x.com/ramxcodes',
-    icon: <X />,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ramxcodes/',
-    icon: <LinkedIn />,
-  },
-  {
     name: 'Github',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://github.com/Alph702',
     icon: <Github />,
   },
   {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/amanatalipanhwer',
+    icon: <LinkedIn />,
+  },
+  {
     name: 'Email',
-    href: 'mailto:ramxcodes@gmail.com',
+    href: 'mailto:amanatapanhwer@gmail.com',
     icon: <Mail />,
   },
 ];

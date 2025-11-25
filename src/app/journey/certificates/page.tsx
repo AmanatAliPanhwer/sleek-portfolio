@@ -57,12 +57,6 @@ export default function CertificatesPage() {
         <Separator />
 
         <div className="space-y-8 md:space-y-12">
-          <p className="text-sm text-muted-foreground">
-            Add certificates (PNG/JPEG) to <code className="font-mono">public/certificates</code> or register
-            them in <code className="font-mono">src/config/Achievements.tsx</code>. Files placed in the
-            directory are auto-discovered and displayed here.
-          </p>
-
           <CertificatesGallery />
         </div>
       </div>

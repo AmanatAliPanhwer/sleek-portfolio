@@ -12,25 +12,24 @@ export interface PageMeta {
 // Base site configuration
 export const siteConfig = {
   name: heroConfig.name,
-  title: 'Sleek Portfolio',
-  description: 'Sleek Portfolio Template by @Ramxcodes',
+  title: 'Amanat\'s Portfolio',
+  description: 'Portfolio of Amanat Ali Panhwer',
   url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
   ogImage: '/meta/opengraph-image.png',
   author: {
     name: about.name,
-    twitter: '@ramxcodes',
-    github: 'ramxcodes',
-    linkedin: 'ramxcodes',
-    email: 'ramxcodes@gmail.com',
+    twitter: '@alph702',
+    github: 'alph702',
+    linkedin: 'amanatalipanhwer',
+    email: 'alph702.12@gmail.com',
   },
   keywords: [
     'portfolio',
     'developer',
-    'full-stack',
-    'react',
-    'nextjs',
-    'typescript',
-    'web development',
+    'python',
+    'backend',
+    'rust',
+    'student',
     heroConfig.name.toLowerCase(),
   ],
 };
@@ -86,6 +85,7 @@ export const pageMetadata: Record<string, PageMeta> = {
       'projects',
       'portfolio',
       'web development',
+      'Python development',
       'applications',
       'software',
     ],
@@ -123,23 +123,6 @@ export const pageMetadata: Record<string, PageMeta> = {
     ],
     ogImage: '/meta/resume.png',
     twitterCard: 'summary',
-  },
-
-  // Gears page
-  '/gears': {
-    title: 'Gears - My Setup & Tools',
-    description:
-      'Discover the tools, devices, and software I use to get my work done efficiently.',
-    keywords: [
-      'setup',
-      'tools',
-      'devices',
-      'software',
-      'productivity',
-      'development environment',
-    ],
-    ogImage: '/meta/gears.png',
-    twitterCard: 'summary_large_image',
   },
 
   // Setup page

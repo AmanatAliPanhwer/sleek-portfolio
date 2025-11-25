@@ -1,26 +1,35 @@
-import Bun from '@/components/technologies/Bun';
 import JavaScript from '@/components/technologies/JavaScript';
-import MongoDB from '@/components/technologies/MongoDB';
-import NextJs from '@/components/technologies/NextJs';
-import NodeJs from '@/components/technologies/NodeJs';
 import PostgreSQL from '@/components/technologies/PostgreSQL';
-import Prisma from '@/components/technologies/Prisma';
-import ReactIcon from '@/components/technologies/ReactIcon';
-import TypeScript from '@/components/technologies/TypeScript';
+import Python from '@/components/technologies/Python';
+import Rust from '@/components/technologies/Rust';
+import Pandas from '@/components/technologies/Pandas';
+import C from '@/components/technologies/C';
+import HTML from '@/components/technologies/Html';
+import CSS from '@/components/technologies/CSS';
+import Cpp from '@/components/technologies/Cpp';
+import Numpy from '@/components/technologies/Numpy';
+import Sckitlearn from '@/components/technologies/Scikitlearn';
+import Matplotlib from '@/components/technologies/Matplotlib';
+
+
 
 export const mySkills = [
-  <ReactIcon key="react" />,
-  <Bun key="bun" />,
+  <Python key="python" />,
+  <Pandas key="pandas" />,
+  <Numpy key="numpy" />,
+  <Sckitlearn key="scikitlearn" />,
+  <Matplotlib key="matplotlib" />,
+  <Rust key="rust" />,
+  <C key="c" />,
+  <Cpp key="c++" />,
+  <HTML key="html" />,
+  <CSS key="css" />,
   <JavaScript key="javascript" />,
-  <TypeScript key="typescript" />,
-  <MongoDB key="mongodb" />,
-  <NextJs key="nextjs" />,
-  <NodeJs key="nodejs" />,
   <PostgreSQL key="postgresql" />,
-  <Prisma key="prisma" />,
 ];
 
 export const about = {
-  name: 'Ramkrishna Swarnkar',
-  description: `I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.`,
+  name: 'Amanat Ali',
+  description: `I'm a Python developer and AI builder who loves creating practical, real-world systems — from automation tools to voice-controlled assistants. I specialize in building intelligent MVPs using Python, machine learning, and efficient backend design.`,
 };
+

@@ -24,10 +24,6 @@ export default function JourneyPage() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
               Journey
             </h1>
-            <p className="mx-auto max-w-2xl text-base md:text-lg text-muted-foreground px-4">
-              No journey content found. Add `src/data/journey/journey.mdx` to
-              display content here.
-            </p>
           </div>
           <Separator />
         </div>
