@@ -37,7 +37,7 @@ Create a `.env` file in the root directory with the following variables:
 ```env
 TELEGRAM_BOT_TOKEN="your-token"
 TELEGRAM_CHAT_ID="your-chat-id"
-GEMINI_API_KEY="your-api-key"
+OPENROUTER_API_KEY="your-api-key"
 NODE_ENV="development"
 NEXT_PUBLIC_URL="http://localhost:3000"
 NEXT_PUBLIC_UMAMI_SRC="your-umami-script-url"
@@ -75,7 +75,7 @@ NEXT_PUBLIC_UMAMI_ID="your-umami-website-id"
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/ramxcodes/sleek-portfolio.git
+   git clone https://github.com/alph702/sleek-portfolio.git
    cd sleek-portfolio
    ```
 

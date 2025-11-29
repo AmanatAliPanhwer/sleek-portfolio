@@ -1,4 +1,5 @@
-import { systemPrompt } from '@/config/ChatPrompt';
+import { baseSystemPrompt } from '@/config/ChatPrompt';
+import { RAGStore } from '@/lib/rag-store';
 import { createParser } from 'eventsource-parser';
 import { NextRequest, NextResponse } from 'next/server';
 import * as z from 'zod';
@@ -128,9 +129,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.OPENROUTER_API_KEY;
     if (!apiKey) {
-      console.error('GEMINI_API_KEY not configured');
+      console.error('OPENROUTER_API_KEY not configured');
       return NextResponse.json(
         { error: 'AI service not configured' },
         { status: 500 },
@@ -140,53 +141,59 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = chatSchema.parse(body);
 
-    // Prepare the request body for Gemini REST API
+    // Retrieve relevant context
+    const ragStore = RAGStore.getInstance();
+    await ragStore.initialize();
+    const context = await ragStore.retrieve(validatedData.message);
+
+    const systemPrompt = `${baseSystemPrompt}\n\nRELEVANT CONTEXT:\n${context}`;
+
+    // Prepare the request body for OpenRouter (OpenAI-compatible) API
     const requestBody = {
-      contents: [
+      model: 'x-ai/grok-4.1-fast:free', // Using x-ai/grok-4.1-fast:free which is available on OpenRouter
+      messages: [
         {
-          parts: [{ text: systemPrompt }],
-          role: 'user',
-        },
-        {
-          parts: [
-            { text: 'I understand. I will act as your portfolio assistant.' },
-          ],
-          role: 'model',
+          role: 'system',
+          content: systemPrompt,
         },
         // Add conversation history
         ...validatedData.history.map((msg) => ({
-          ...msg,
-          parts: msg.parts.map((part) => ({
-            ...part,
-            text: msg.role === 'user' ? sanitizeInput(part.text) : part.text,
-          })),
+          role: msg.role === 'model' ? 'assistant' : msg.role,
+          content: msg.parts.map((part) =>
+            msg.role === 'user' ? sanitizeInput(part.text) : part.text,
+          ).join(' '),
         })),
         // Add current message
         {
-          parts: [{ text: sanitizeInput(validatedData.message) }],
           role: 'user',
+          content: sanitizeInput(validatedData.message),
         },
       ],
-      generationConfig: {
-        maxOutputTokens: 512,
-        temperature: 0.7,
-        topP: 0.8,
-        topK: 40,
-      },
+      temperature: 0.7,
+      max_tokens: 512,
+      top_p: 0.8,
+      stream: true, // Enable streaming
     };
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:streamGenerateContent?alt=sse&key=${apiKey}`;
+    const openRouterUrl = 'https://openrouter.ai/api/v1/chat/completions';
 
-    const response = await fetch(geminiUrl, {
+    const response = await fetch(openRouterUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+        'HTTP-Referer': 'https://sleek-portfolio.vercel.app', // Replace with your actual domain
+        'X-Title': 'Sleek Portfolio Chatbot', // Replace with your app name
       },
       body: JSON.stringify(requestBody),
     });
 
     if (!response.ok) {
-      throw new Error(`Gemini API error: ${response.status}`);
+      // OpenRouter can return more detailed error messages in the response body
+      const errorData = await response.json();
+      throw new Error(
+        `OpenRouter API error: ${response.status} - ${JSON.stringify(errorData)}`,
+      );
     }
 
     const encoder = new TextEncoder();
@@ -197,8 +204,13 @@ export async function POST(request: NextRequest) {
           const parser = createParser({
             onEvent: (event) => {
               try {
+                if (event.data === '[DONE]') {
+                  controller.enqueue(encoder.encode('data: {"done": true}\n\n'));
+                  controller.close();
+                  return;
+                }
                 const data = JSON.parse(event.data);
-                const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+                const text = data?.choices?.[0]?.delta?.content;
                 if (text) {
                   // Send as Server-Sent Event format
                   const sseData = `data: ${JSON.stringify({ text })}\n\n`;
