@@ -32,7 +32,7 @@ export const projects: Project[] = [
     description:
       'A personal blogging platform to share my thoughts and experiences.',
     image: '/project/blog.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/notesbuddy.mp4?tr=orig',
+    // video: 'https://ik.imagekit.io/hokb3mrdr/notesbuddy.mp4?tr=orig',
     link: 'https://amanatalipanhwer.vercel.app/',
     technologies: [
       { name: 'HTML', icon: <Html key="html" /> },
