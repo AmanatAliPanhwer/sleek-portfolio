@@ -8,6 +8,24 @@ import PostgreSQL from '@/components/technologies/PostgreSQL';
 import Prisma from '@/components/technologies/Prisma';
 import ReactIcon from '@/components/technologies/ReactIcon';
 import TypeScript from '@/components/technologies/TypeScript';
+import Python from '@/components/technologies/Python';
+import Supabase from '@/components/technologies/Supabase';
+import Flask from '@/components/technologies/Flask';
+import Html from '@/components/technologies/Html';
+import CSS from '@/components/technologies/CSS';
+import LangChain from '../technologies/Langchain';
+import LangGraph from '../technologies/LangGraph';
+import Fastapi from '../technologies/Fastapi';
+import Django from '../technologies/Django';
+import Streamlit from '../technologies/Streamlit';
+import Playwright from '../technologies/Playwright';
+import C from '../technologies/C';
+import Matplotlib from '../technologies/Matplotlib';
+import Numpy from '../technologies/Numpy';
+import Pandas from '../technologies/Pandas';
+import Rust from '../technologies/Rust';
+import Sckitlearn from '../technologies/Scikitlearn';
+import Selenium from '../technologies/Selenium';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import React from 'react';
@@ -35,6 +53,42 @@ const TechnologyComponents: Record<string, React.ComponentType> = {
   prisma: Prisma,
   Bun: Bun,
   bun: Bun,
+  Python: Python,
+  python: Python,
+  Supabase: Supabase,
+  supabase: Supabase,
+  Flask: Flask,
+  flask: Flask,
+  Html: Html,
+  html: Html,
+  CSS: CSS,
+  css: CSS,
+  LangChain: LangChain,
+  langchain: LangChain,
+  LangGraph: LangGraph,
+  langgraph: LangGraph,
+  Fastapi: Fastapi,
+  fastapi: Fastapi,
+  Django: Django,
+  django: Django,
+  Streamlit: Streamlit,
+  streamlit: Streamlit,
+  Playwright: Playwright,
+  playwright: Playwright,
+  C: C,
+  c: C,
+  Matplotlib: Matplotlib,
+  matplotlib: Matplotlib,
+  Numpy: Numpy,
+  numpy: Numpy,
+  Pandas: Pandas,
+  pandas: Pandas,
+  Rust: Rust,
+  rust: Rust,
+  Sckitlearn: Sckitlearn,
+  scikitlearn: Sckitlearn,
+  Selenium: Selenium,
+  selenium: Selenium,
 };
 
 // Custom Technology component for displaying technology badges with icons

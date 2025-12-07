@@ -18,9 +18,37 @@ import TailwindCss from '@/components/technologies/TailwindCss';
 import ThreeJs from '@/components/technologies/ThreeJs';
 import TypeScript from '@/components/technologies/TypeScript';
 import Vercel from '@/components/technologies/Vercel';
+import Python from '@/components/technologies/Python';
+import Supabase from '@/components/technologies/Supabase';
+import Html from '@/components/technologies/Html';
+import CSS from '@/components/technologies/CSS';
+import JavaScript from '@/components/technologies/JavaScript';
+import Flask from '@/components/technologies/Flask';
 import { Project } from '@/types/project';
 
 export const projects: Project[] = [
+  {
+    title: 'MyBlog',
+    description:
+      'A personal blogging platform to share my thoughts and experiences.',
+    image: '/project/blog.png',
+    video: 'https://ik.imagekit.io/hokb3mrdr/notesbuddy.mp4?tr=orig',
+    link: 'https://amanatalipanhwer.vercel.app/',
+    technologies: [
+      { name: 'HTML', icon: <Html key="html" /> },
+      { name: 'CSS', icon: <CSS key="css" /> },
+      { name: 'JavaScript', icon: <JavaScript key="JavaSctipt" /> },
+      { name: 'Vercel', icon: <Vercel key="vercel" /> },
+      { name: 'Python', icon: <Python key="python" /> },
+      { name: 'Supabase', icon: <Supabase key="supabase" /> },
+      { name: 'Flask', icon: <Flask key="flask" /> },
+    ],
+    github: 'https://github.com/Alph702/Blog',
+    live: 'https://amanatalipanhwer.vercel.app/',
+    details: true,
+    projectDetailsPageSlug: '/projects/MyBlog',
+    isWorking: true,
+  },
   {
     title: 'NotesBuddy',
     description:
