@@ -107,7 +107,7 @@ export const heroConfig = {
 export const socialLinks = [
   {
     name: 'Github',
-    href: 'https://github.com/Alph702',
+    href: 'https://github.com/AmanatAliPanhwer',
     icon: <Github />,
   },
   {
@@ -119,5 +119,10 @@ export const socialLinks = [
     name: 'Email',
     href: 'mailto:amanatapanhwer@gmail.com',
     icon: <Mail />,
+  },
+  {
+    name: 'X',
+    href: 'https://x.com/alph702',
+    icon: <X />,
   },
 ];
