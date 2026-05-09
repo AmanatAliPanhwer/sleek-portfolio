@@ -33,6 +33,7 @@ import Rust from '@/components/technologies/Rust';
 import C from '@/components/technologies/C';
 import Cpp from '@/components/technologies/Cpp';
 import JavaScript from '@/components/technologies/JavaScript';
+import Sindlish from '@/components/technologies/Sindlish';
 
 // Component mapping for skills
 export const skillComponents = {
@@ -41,13 +42,14 @@ export const skillComponents = {
   C: C,
   Cpp: Cpp,
   JavaScript: JavaScript,
+  Sindlish: Sindlish,
 };
 
 export const heroConfig = {
   // Personal Information
   name: 'Amanat Ali',
   title: 'Python & Systems Developer.',
-  avatar: '/assets/logo.png',
+  avatar: '/assets/logo.jpg',
 
   // Skills Configuration
   skills: [
@@ -71,12 +73,17 @@ export const heroConfig = {
       href: 'https://isocpp.org/',
       component: 'Cpp',
     },
+    {
+      name: 'Sindlish',
+      href: 'https://sindlish.vercel.app/',
+      component: 'Sindlish',
+    }
   ],
 
   // Description Configuration
   description: {
     template:
-      'I engineer intelligent systems using {skills:0}, {skills:1}, {skills:2}, and {skills:3}My work blends automation, machine learning, and high-performance system design—building tools that think fast, react precisely, and scale with real-world complexity.',
+      'I engineer intelligent systems using {skills:0}, {skills:1}, {skills:2}, and {skills:3}\nMy work blends automation, machine learning, and high-performance system design building tools that think fast, react precisely, and scale with real-world complexity. I am also creator of {skills:4}, a programming language for Sindhi speakers.',
     },
 
   // Buttons Configuration

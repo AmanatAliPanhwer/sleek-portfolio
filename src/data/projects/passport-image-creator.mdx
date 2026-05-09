@@ -1,0 +1,50 @@
+---
+title: 'Passport Image Creator'
+description: 'A website that converts images into passport-style photos.' 
+image: '/project/passport_image_creater.png'
+technologies:
+  [
+    'Python',
+    'Streamlit',
+  ]
+github: 'https://github.com/AmanatAliPanhwer/PassportImageCreator'
+live: 'https://passportimagecreator.streamlit.app/'
+timeline: '1 day'
+role: 'Full Stack'
+team: 'Solo'
+status: 'completed'
+featured: true
+challenges:
+  [
+    'Accurate Background Segmentation',
+    'Precise Face Detection and Centering',
+    'Proper Image Cropping and Padding',
+    "Limited Computational Resources for Image Processing",
+  ]
+learnings:
+  [
+    'MODNet ONNX Integration',
+    'MediaPipe for Face Analytics',
+    'Streamlit Web Framework',
+    'OpenCV Image Manipulation'
+  ]
+isPublished: true
+---
+
+# Passport Image Creator
+
+## Overview
+
+This project is a Streamlit web application that automatically converts user-uploaded images into passport-style photos. The application streamlines the process of creating passport photos by performing background removal, face detection, and appropriate cropping and padding.
+
+## Key Features
+
+- **Automatic Background Removal:** Utilizes the MODNet ONNX model to accurately remove the background from an input image.
+- **Face Detection:** Employs the MediaPipe Face Detection library to identify the face in the image, ensuring the final photo is correctly centered.
+- **Passport-Style Cropping:** Crops the image around the detected face with proportional padding to meet standard passport photo requirements.
+- **Background Replacement:** Adds a solid blue background, a common requirement for passport photos.
+- **Web-Based Interface:** A user-friendly interface built with Streamlit for easy image uploading and processing.
+
+## Architecture
+
+The application follows a simple, single-module architecture containing the Streamlit Frontend (`main.py`) for the UI, an Image Processing Service pipeline, a MODNet ONNX Model for background segmentation, and MediaPipe for Face Detection logic. All orchestrated using Python.

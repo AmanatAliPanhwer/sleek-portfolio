@@ -1,0 +1,60 @@
+---
+title: 'Smart Attendance System'
+description: 'A web-based smart attendance system using face recognition.'
+image: '/project/smart_face.png'
+technologies:
+  [
+    'Python',
+    'Flask',
+    'SQLite',
+    'Pydantic',
+  ]
+github: 'https://github.com/AmanatAliPanhwer/SmartAttendanceSystem'
+live: ''
+timeline: '2 Weeks'
+role: 'Full Stack'
+team: 'Solo'
+status: 'completed'
+featured: true
+challenges:
+  [
+    'Web-based Face Registration',
+    'Real-time Face Recognition in Browser',
+    'Generating 512-dimensional Face Embeddings'
+  ]
+learnings:
+  [
+    'Flask and Flask-SQLAlchemy',
+    'WebRTC and Browser Webcam Integration',
+    'MediaPipe Face Detection',
+    'ONNX Runtime and Face Embeddings'
+  ]
+isPublished: true
+---
+
+# Smart Attendance System
+
+## Overview
+
+A web-based smart attendance system using face recognition. It leverages a Flask backend, MediaPipe for face detection and alignment, and ONNX models for efficient face embedding generation.
+
+## Key Features
+
+- **Web Interface:** Easy-to-use browser-based interface for registration, recognition, and reporting.
+- **Face Registration:** Register students by capturing their face via webcam directly from the browser.
+- **Face Recognition:** Real-time face recognition from the webcam feed to mark attendance automatically.
+- **Attendance Management & Reports:** View attendance records with advanced filtering and export them to CSV, JSON, or Excel.
+- **Database Storage:** Uses SQLite and SQLAlchemy to robustly store user profiles, face encodings, and attendance logs.
+
+## Technologies Used
+
+- **Backend:** Python 3.11+, Flask, Flask-SQLAlchemy, Pydantic
+- **Computer Vision:** `mediapipe` (face detection/landmarks), `opencv-python` (image processing), `numpy`, `onnxruntime` (Mobile-ArcFace/MobileFaceNet for embeddings)
+- **Database:** SQLite
+- **Package Management:** `uv`
+
+## How It Works
+
+1. **Registration:** Users navigate to the Registration page and capture their face. The system generates a 512-dimensional embedding and stores it in the database.
+2. **Recognition:** The Recognition page captures the live feed via webcam. It extracts faces and compares the embeddings against the registered dataset.
+3. **Reporting:** Successfully identified faces are securely logged into the SQLite database and can be exported as reports.

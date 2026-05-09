@@ -1,0 +1,52 @@
+---
+title: 'Md2Anki'
+description: 'A website that converts Markdown notes into Anki decks.'
+image: '/project/md_2_anki.png'
+technologies:
+  [
+    'Python',
+    'Flask',
+    'Tailwind CSS',
+  ]
+github: 'https://github.com/AmanatAliPanhwer/Md2anki'
+live: ''
+timeline: '2 days'
+role: 'Full Stack'
+team: 'Solo'
+status: 'completed'
+featured: true
+challenges:
+  [
+    'Accurate Question Generation using AI',
+    'Parsing Markdown into structured data',
+    'Generating standard .apkg Anki Files'
+  ]
+learnings:
+  [
+    'Groq API Integration',
+    'genanki Library',
+    'Tailwind CSS Styling',
+    'Flask File Handling'
+  ]
+isPublished: true
+---
+
+# Md2Anki
+
+## Overview
+
+Md2Anki is a simple web application that instantly converts your Markdown notes into Anki flashcard decks (`.apkg` files). It uses the Groq AI API to intelligently generate question-and-answer pairs from your notes, making it easy to create study decks for active recall.
+
+## Key Features
+
+- **Simple Web Interface:** Easy-to-use drag-and-drop interface for uploading your Markdown files.
+- **AI-Powered:** Leverages the Groq API for fast and accurate flashcard generation.
+- **Anki Integration:** Generates `.apkg` files that can be directly imported into Anki.
+- **Lightweight:** Built with Flask and Tailwind CSS.
+
+## How It Works
+
+1. **Upload:** You provide a Markdown (`.md`) file through the web interface.
+2. **AI Conversion:** The content is sent to the Groq API, which analyzes the text and generates a structured JSON list of questions and answers.
+3. **Deck Generation:** The application uses the `genanki` library to create an Anki deck from the generated flashcards.
+4. **Download:** The final `.apkg` deck is sent back to your browser for you to download and import into Anki.

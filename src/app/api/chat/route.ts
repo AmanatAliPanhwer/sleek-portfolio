@@ -150,7 +150,7 @@ export async function POST(request: NextRequest) {
 
     // Prepare the request body for OpenRouter (OpenAI-compatible) API
     const requestBody = {
-      model: 'x-ai/grok-4.1-fast:free', // Using x-ai/grok-4.1-fast:free which is available on OpenRouter
+      model: 'openai/gpt-oss-120b:free', // Using x-ai/grok-4.1-fast:free which is available on OpenRouter
       messages: [
         {
           role: 'system',

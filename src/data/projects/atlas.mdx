@@ -1,0 +1,57 @@
+---
+title: 'ATLAS'
+description: 'A multimodal desktop AI assistant, built with Electron and Python.'
+image: '/project/atlas.png'
+technologies:
+  [
+    'Python',
+    'JavaScript',
+    'HTML',
+    'CSS',
+  ]
+github: 'https://github.com/AmanatAliPanhwer/ATLAS'
+live: ''
+timeline: '3 Weeks'
+role: 'Full Stack Developer'
+team: 'Solo'
+status: 'in-progress'
+featured: true
+challenges:
+  [
+    'Multimodal Interaction via Audio/Video',
+    'Real-time WebSocket Communication',
+    'Persistent Memory implementation'
+  ]
+learnings:
+  [
+    'Electron Desktop Architecture',
+    'Retrieval-Augmented Generation (RAG)',
+    'FastAPI WebSockets',
+    'Google Gemini API Integration'
+  ]
+isPublished: true
+---
+# ATLAS
+
+## Overview
+
+ATLAS is a multimodal desktop AI assistant with a conversational interface. It can understand and process audio, video, and text, and responds in real-time. It features a persistent memory and the ability to access the internet for up-to-date information.
+
+## Key Features
+
+- **Multimodal Interaction:** Communicate with ATLAS using your voice, camera, screen share, or text.
+- **Real-time Conversation:** ATLAS processes information and responds in real-time for a natural conversational experience.
+- **Persistent Memory:** ATLAS remembers past conversations, providing context for future interactions using RAG.
+- **Internet Access:** ATLAS can search the internet to answer questions and provide current information via Tavily API.
+- **Desktop Integration:** As a desktop application, ATLAS can access the screen and other system resources.
+
+## Architecture
+
+The project employs a robust client-server architecture:
+- **Backend**: Python application using FastAPI for real-time WebSocket communication. Employs a "deep agent" architecture with specialized sub-agents. It uses ChromaDB for persistent memory.
+- **Frontend**: Electron application providing the user interface, handling user inputs from microphone/camera, and communicating with the Python backend.
+
+## Tech Stack
+
+- **Backend:** Python, FastAPI, WebSockets, Google Generative AI (Gemini), LangChain, ChromaDB, Tavily API.
+- **Frontend:** Electron, JavaScript, HTML, CSS.

@@ -1,0 +1,62 @@
+---
+title: 'Bhariyo'
+description: 'A modern digital implementation of the ancient Sindhi board game Bhariyo.'
+image: '/project/bhariyo.png'
+technologies:
+  [
+    'React',
+    'Node.js',
+    'Express',
+    'Supabase',
+    'CSS',
+  ]
+github: 'https://github.com/AmanatAliPanhwer/Bhariyo'
+live: 'https://bhariyo.vercel.app/'
+timeline: '1 Month'
+role: 'Full Stack'
+team: 'Solo'
+status: 'completed'
+featured: true
+challenges:
+  [
+    'Real-time Multiplayer Synchronization',
+    'Advanced Hybrid AI Engine',
+    'WebRTC Voice Chat Integration',
+    'Performance Optimization via Web Workers'
+  ]
+learnings:
+  [
+    'TensorFlow.js and ONNX Inference',
+    'Monte Carlo Tree Search (MCTS)',
+    'Real-time Databases with Supabase',
+    'Game State Management'
+  ]
+isPublished: true
+---
+
+# Bhariyo (بھریو)
+
+## Overview
+
+Bhariyo is a modern, AI-powered digital implementation of the ancient Sindhi board game **Bhariyo**. Built with a focus on high-performance AI, real-time multiplayer connectivity, and a premium user experience, Bhariyo brings a centuries-old tradition into the modern era.
+
+## Key Features
+
+- **Advanced Artificial Intelligence**: Play against bots with varying difficulty. The AI uses a Hybrid Engine combining Minimax with Alpha-Beta Pruning, Iterative Deepening, and Monte Carlo Tree Search (MCTS), evaluated via Graph Convolutional Networks (GCN) running in Web Workers.
+- **Real-time Multiplayer**: Powered by Supabase for seamless matchmaking and game state synchronization. Features a global leaderboard and match history.
+- **WebRTC Voice Chat**: Integrated voice communication allowing players to talk during matches.
+- **Learning & Mastery**: Includes Puzzle Mode, Learn View for tutorials, and a distraction-free Focus Mode.
+
+## Technical Stack
+
+- **Frontend**: React 19 + Vite with a custom Vanilla CSS design system.
+- **Backend**: Node.js + Express, paired with Supabase for realtime databases.
+- **Machine Learning**: TensorFlow.js and ONNX Runtime Web for browser-based neural network inference.
+- **Voice**: Simple-Peer for WebRTC voice communication.
+
+## Game Rules
+
+1. **Phase 1 (Placing)**: Players take turns placing 9 pieces on the 24 available nodes.
+2. **Phase 2 (Moving)**: Move pieces to adjacent nodes.
+3. **Phase 3 (Flying)**: When reduced to 3 pieces, a player can fly to any vacant node.
+4. **Mills**: Forming a line of 3 pieces allows you to remove an opponent's piece. Win by reducing the opponent to 2 pieces or blocking all their moves.
